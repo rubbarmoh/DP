@@ -406,6 +406,11 @@
 			<list>
 			</list>
 		</property>
+		<property name="menus">
+			<list>
+				<ref bean="menu1"/>
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="user2" class="domain.User">
@@ -1666,6 +1671,11 @@
 			<list>
 			</list>
 		</property>
+		<property name="tipoPlatos">
+			<list>
+				<ref bean="tipoPlato1"/>
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="recipe2" class="domain.Recipe">
@@ -2587,5 +2597,21 @@
 	  <property name="maxDisplay" value="25" />
 	  <property name="displayed" value="0" />
 	 </bean>
+
+	<bean id="menu1" class="domain.Menu">
+	 <property name="random" value="123-AAAA"/>
+	 <property name="user" ref="user1"/>
+	 <property name="tipoPlatos">
+	 	<list>
+	 		<ref bean="tipoPlato1"/>
+	 	</list>
+	 </property>
+	</bean>
+	
+	<bean id="tipoPlato1" class="domain.TipoPlato">
+	 <property name="tipoPlato" value="Entrantes"/>
+	 <property name="menu" ref="menu1"/>
+	 <property name="recipe" ref="recipe1"/>
+	</bean>
 
 </beans>

@@ -120,6 +120,7 @@ public class Recipe extends DomainEntity{
 	private Collection<Quantity> quantities;
 	private Collection<RelationLike> relationLikes;
 	private Collection<RelationDislike> relationDislikes;
+	private Collection<TipoPlato> tipoPlatos;
 	
 	@OneToMany(mappedBy="recipe")
 	public Collection<RelationLike> getRelationLikes() {
@@ -186,5 +187,14 @@ public class Recipe extends DomainEntity{
 		this.steps = steps;
 	}
 
+	@Valid
+	@OneToMany(mappedBy="recipe")
+	public Collection<TipoPlato> getTipoPlatos(){
+		return tipoPlatos;
+	}
+	public void setTipoPlatos(Collection<TipoPlato> tipoPlatos){
+		this.tipoPlatos = tipoPlatos;
+	}
+	
 	
 }
