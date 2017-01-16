@@ -36,6 +36,18 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	
 	@Query("select max(u.recipes.size) from User u")
 	Integer findMaxRecipesPerUser();
+	
+	// Menus -------------------------------------------------------
+	
+
+	@Query("select min(u.menus.size) from User u")
+	Integer getMinMenusByUser();
+	
+	@Query("select max(u.menus.size) from User u")
+	Integer getMaxMenusByUser();
+	
+	@Query("select avg(u.menus.size) from User u")
+	Double getAvgMenusByUser();
 }
 
 

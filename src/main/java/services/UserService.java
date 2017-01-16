@@ -35,6 +35,7 @@ public class UserService {
 		@Autowired
 		private UserRepository userRepository;
 		
+		
 		// Supporting services ----------------------------------------------------
 		
 		@Autowired
@@ -276,5 +277,30 @@ public class UserService {
 			return latest;
 		}
 		
-		
+		public Collection<Double> findMinAvgMaxMenusPerUser(){
+			Collection<Double> result = new ArrayList<Double>();
+			
+			Integer min = userRepository.getMinMenusByUser();
+			Double avg = userRepository.getAvgMenusByUser();
+			Integer max = userRepository.getMaxMenusByUser();
+				
+			if(min == null || min == 0){
+				result.add(0.0);
+			}else{
+				result.add(min*1.0);
+			}
+			if(avg == null || avg == 0){
+				result.add(0.0);
+			}else{
+				result.add(avg);
+			}
+			if(max == null || max == 0){
+				result.add(0.0);
+			}else{
+				result.add(max*1.0);
+			}
+			
+			return result;
+		}
+
 }

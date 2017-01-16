@@ -102,6 +102,7 @@
 					<li><a href="recipe/create.do"><spring:message code="master.page.recipe.create" /></a></li>
 					<li><a href="user/following.do"><spring:message code="master.page.user.follow" /></a></li>
 					<li><a href="recipe/stream.do"><spring:message code="master.page.recipe.stream" /></a></li>
+					<li><a href="menu/list.do"><spring:message code="master.page.menu" /></a></li>
 				</ul>
 			</li>
 				</security:authorize>		

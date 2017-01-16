@@ -51,6 +51,7 @@
 		<value>/views/endorser/messages</value>
 
 		<value>/views/qualify/messages</value>
+		<value>/views/menu/messages</value>
 
 	</util:list>
 
