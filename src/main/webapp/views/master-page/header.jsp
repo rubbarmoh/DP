@@ -25,6 +25,7 @@
 				<li class="arrow"></li>
 				<li><a href="masterClass/browse.do"><spring:message code="master.page.masterClass.browse" /></a></li>	
 				<li><a href="recipe/browse.do"><spring:message code="master.page.recipe.browse" /></a></li>
+				<li><a href="review/list.do"><spring:message code="master.page.review.list" /></a></li>
 				<security:authorize access="hasRole('USER')">
 					
 				</security:authorize>

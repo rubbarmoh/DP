@@ -72,6 +72,9 @@
 		<security:intercept-url pattern="/message/**" access="isAuthenticated()"/>
 
 		<security:intercept-url pattern="/recipe/browse.do" access="permitAll"/>
+		<security:intercept-url pattern="/review/list.do" access="permitAll"/>
+		<security:intercept-url pattern="/review/edit.do" access="hasRole('CRITIC')"/>
+		<security:intercept-url pattern="/review/create.do" access="hasRole('CRITIC')"/>
 		<security:intercept-url pattern="/recipe/stream.do" access="hasAnyRole('USER','NUTRITIONIST')"/>
 		<security:intercept-url pattern="/recipe/search.do" access="permitAll"/>
 		<security:intercept-url pattern="/recipe/display.do" access="permitAll"/>

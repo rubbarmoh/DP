@@ -214,6 +214,18 @@
 		</property>
 	</bean>
 	
+	<bean id="userAccount17" class="security.UserAccount">
+		<property name="username" value="critic1" />
+		<property name="password" value="165d185050bab438668aef6faeee3be5" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CRITIC" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
 	<!-- Other domain beans come here -->
 
 	<!-- Administrator -->	
@@ -300,6 +312,27 @@
 			</list>
 		</property>
 		<property name="categories">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+		<bean id="critic1" class="domain.Critic">
+		<property name="name" value="Critico"/>
+		<property name="surname" value="de Prueba"/>
+		<property name="email" value="system@gmail.com"/>
+		<property name="phone" value="+354(001)92E2"/>
+		<property name="postalAddress"><null/></property>
+		<property name="userAccount" ref="userAccount17"/>
+		<property name="sendedMessages">
+			<list>
+			</list>
+		</property>
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+		<property name="socialIdentities">
 			<list>
 			</list>
 		</property>
@@ -1618,6 +1651,49 @@
 	  </property>
 	 </bean>
 	 
+	 <bean id="folder65" class="domain.Folder">
+	  <property name="name" value="Inbox"/>
+	  <property name="predefined" value="True"/>
+	  <property name="actor" ref="critic1"/>
+	  <property name="messages">
+	   <list>
+	   </list>
+	  </property>
+	 </bean>
+	
+	<bean id="folder66" class="domain.Folder">
+	  <property name="name" value="Outbox"/>
+	  <property name="predefined" value="True"/>
+	  <property name="actor" ref="critic1"/>
+	  <property name="messages">
+	   <list>
+	   </list>
+	  </property>
+	 </bean>
+	
+	<bean id="folder67" class="domain.Folder">
+	  <property name="name" value="Trashbox"/>
+	  <property name="predefined" value="True"/>
+	  <property name="actor" ref="critic1"/>
+	  <property name="messages">
+	   <list>
+	   </list>
+	  </property>
+	 </bean>
+	
+	<bean id="folder68" class="domain.Folder">
+	  <property name="name" value="Spambox"/>
+	  <property name="predefined" value="True"/>
+	  <property name="actor" ref="critic1"/>
+	  <property name="messages">
+	   <list>
+	   </list>
+	  </property>
+	 </bean>
+	 
+	 
+	 
+	 
 	 <!-- Recipe -->
 	
 	<bean id="recipe1" class="domain.Recipe">
@@ -2588,4 +2664,21 @@
 	  <property name="displayed" value="0" />
 	 </bean>
 
+	<bean id="review1" class="domain.Review">
+	 <property name="title" value="titleReview1"/>
+	 <property name="text" value="text of review"/>
+	 <property name="valoration" value="positive"/>
+	 <property name="authoredMoment" value="12/12/2016 18:00"/>
+	 <property name="critic" ref="critic1"/>
+	 <property name="recipe" ref="recipe1"/>
+	</bean>
+
+	<bean id="review2" class="domain.Review">
+	 <property name="title" value="titleReview2"/>
+	 <property name="text" value="text of review"/>
+	 <property name="valoration" value="negative"/>
+	 <property name="authoredMoment" value="12/12/2016 18:00"/>
+	 <property name="critic" ref="critic1"/>
+	 <property name="recipe" ref="recipe1"/>
+	</bean>
 </beans>

@@ -49,8 +49,8 @@
 		<value>/views/quantity/messages</value>
 		<value>/views/category/messages</value>
 		<value>/views/endorser/messages</value>
-
 		<value>/views/qualify/messages</value>
+		<value>/views/review/messages</value>
 
 	</util:list>
 
